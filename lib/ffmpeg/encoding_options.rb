@@ -43,6 +43,7 @@ module FFMPEG
     end
 
     private
+
     def supports_option?(option)
       option = RUBY_VERSION < "1.9" ? "convert_#{option}" : "convert_#{option}".to_sym
       private_methods.include?(option)
@@ -50,6 +51,10 @@ module FFMPEG
 
     def convert_aspect(value)
       ["-aspect", value]
+    end
+
+    def convert_scale(value)
+      ["-vf", value]
     end
 
     def calculate_aspect
