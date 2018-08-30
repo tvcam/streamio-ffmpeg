@@ -53,8 +53,8 @@ module FFMPEG
       ["-aspect", value]
     end
 
-    def convert_scale(value)
-      ["-vf", value]
+    def convert_crf(value)
+      ["-crf", value]
     end
 
     def calculate_aspect
